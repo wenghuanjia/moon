@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>小目标</title>
+        <style>
+            /*$sunlight: #fff;*/
+            /*$shadow: #111;*/
+
+            html {
+                height: 100%;
+                font-size: 80%;
+            }
+
+            body {
+                height: 100%;
+                background-color: #020202;
+                overflow: hidden;
+                text-align: center;
+            }
+
+            .container {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .moon {
+                display: inline-block;
+                width: 19rem;
+                height: 19rem;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 0 0.25rem;
+            }
+            .moon:first-of-type {
+                animation-delay: -2.5s;
+            }
+            .monn:last-of-type {
+                animation-delay: -17.5s;
+            }
+            .light {
+                box-sizing: border-box;
+                width: 20rem;
+                height: 20rem;
+                background-color: #111;
+                border-radius: 50%;
+                animation: cycle 20s linear infinite reverse;
+                animation-delay: -10s;
+                filter: blur(0.5rem);
+            }
+
+            .texture {
+              width: 19rem;
+              height: 19rem;
+              border-radius: 50%;
+              position: absolute;
+              margin-top: -20rem;
+              background-image: url(moon_3.jpg);
+              background-position: center center;
+              background-size: 195%;
+              background-repeat: no-repeat;
+              mix-blend-mode: multiply;
+            }
+
+            .sphere {
+                width: 19.75rem;
+                height: 19.75rem;
+                border-radius: 50%;
+                box-shadow:
+                  inset 0 0 10rem #000,
+                  inset 0 0 5rem #000,
+                  inset 0 0 3rem #000;
+                position: absolute;
+                margin-top: -20.3rem;
+                margin-left: -0.3rem;
+                filter: blur(0.1rem);
+            }
+
+            @keyframes cycle {
+                0% {
+                    border-left: 0 solid #fff;
+                    border-right: 10rem solid #111;
+                    background-color: #111;
+                    transform: rotate(-10deg);
+                }
+                24.9999% { background-color: #111; }
+                25% {
+                    border-left: 10rem solid #fff;
+                    border-right: 10rem solid #111;
+                    background-color: #fff;
+                }
+                50% {
+                    border-left: 0 solid #fff;
+                    border-right: 0 solid #111;
+                    background-color: #fff;
+                    transform: rotate(0deg);
+                }
+                50.0001% {
+                    border-left: 0 solid #111;
+                }
+                74.9999% {
+                    background-color: #fff;
+                    border-right: 0 solid #fff;
+                }
+                75% {
+                    border-left: 10rem solid #111;
+                    border-right: 10rem solid #fff;
+                    background-color: #111;
+                }
+                100% {
+                    border-left: 10rem solid #111;
+                    border-right: 0 solid #fff;
+                    background-color: #111;
+                    transform: rotate(10deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="moon">
+            <div class="light"></div>
+            <div class="texture"></div>
+            <div class="sphere"></div>
+        </div>
+        <div class="moon">
+            <div class="light"></div>
+            <div class="texture"></div>
+            <div class="sphere"></div>
+        </div>
+        <div class="moon">
+            <div class="light"></div>
+            <div class="texture"></div>
+            <div class="sphere"></div>
+            </div>
+        </div>
+    </body>
+</html>
